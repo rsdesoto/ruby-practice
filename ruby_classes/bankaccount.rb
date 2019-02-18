@@ -7,10 +7,7 @@ class BankAccount
       add_transaction("Beginning Balance", 0)
     end
     
-    def to_s
-      endnum = balance()
-      puts "Name: #{name}, Balance: #{endnum.to_s}"
-    end
+    
     
     def balance
       balance = 0
@@ -31,6 +28,11 @@ class BankAccount
     def add_transaction(description, amount)
       @transactions.push(description: description, amount: amount)
     end
+
+    def to_s
+       
+       "Name: #{name}, Balance: #{balance}"
+      end
   
   end
   
