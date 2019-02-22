@@ -1,6 +1,6 @@
 def is_isogram(string)
     letterarr = []
-    string.lowercase.split("").each do |letter|
+    string.downcase.split("").each do |letter|
         if letterarr.include? letter
             return false
         else 
@@ -18,3 +18,4 @@ end
 
 puts is_isogram('hello world')
 puts is_isogram("moOse")
+puts is_isogram("Dermatoglyphics" )
