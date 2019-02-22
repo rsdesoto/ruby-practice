@@ -5,8 +5,17 @@ def get_widget_count()
 end
 
 def multiply_widget()
-    widget_cnt = get_widget_count()
-    puts (widget_cnt.to_i * 10).to_s
+    widget_cnt = get_widget_count().to_i
+    if widget_cnt >= 100
+        widget_sum = widget_cnt * 8
+    
+    elsif widget_cnt >= 50
+        widget_sum = widget_cnt * 9
+    
+    else
+        widget_sum = widget_cnt * 10
+    end
+    puts "Your total for your #{widget_cnt.to_s} widgets is $#{widget_sum.to_s}"
 end
 
 multiply_widget()
