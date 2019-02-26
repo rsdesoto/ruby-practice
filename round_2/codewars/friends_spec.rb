@@ -14,5 +14,13 @@ describe Codewars do
             expect(friendarr).to eq []
         end
     end
+
+    context "When testing the get_middle code from codewars" do
+        it "should return middle letter for an odd letter string" do 
+            middle = Codewars.new 
+            middleletter = middle.get_middle("abc")
+            expect(middleletter).to eq "b"
+        end
+    end
 end
 

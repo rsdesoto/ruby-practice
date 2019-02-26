@@ -6,22 +6,6 @@
 
 class Codewars
 
-    def friendworks(friends)
-        realfriend = []
-        friends.each do |friend|
-            if friend.length == 4
-                realfriend.push(friend)
-            end
-        end
-        return realfriend
-    end
-
-    def friend(friends)
-        realfriend = []
-        friends.map {|friend| realfriend.push(friend) if friend.length == 4}
-        return realfriend
-    end
-
     def get_middle(s)
         len = s.length
       
