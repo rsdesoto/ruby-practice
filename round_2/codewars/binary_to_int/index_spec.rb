@@ -14,4 +14,9 @@ describe Codewars do
         expect(test.binary_array_to_number([1])).to eq(1)
         expect(test.binary_array_to_number([0])).to eq(0)
     end
+
+    it "works for longer than 4 string arrays" do
+        expect(test.binary_array_to_number([0,0,0,0,0,0,0,0,0,1])).to eq(1)
+        expect(test.binary_array_to_number([0,0,0,0,0,0,0,1,0,1])).to eq(5)
+    end
 end
