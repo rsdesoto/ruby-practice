@@ -16,8 +16,8 @@
 
 
 class Cameling
-    def cameling(s)
-        (s.split(" ").map{|word| word.capitalize}).join("")
+    def cameling
+        (self.split(" ").map{|word| word.capitalize}).join("")
     end
 end
 

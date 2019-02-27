@@ -32,3 +32,29 @@
 
 # test = "x" * 3
 # puts test 
+
+class Codewars 
+    def frame(text, char)
+        len = 0
+        # step 1: find the longest entry in array 
+        text.each do |word|
+            if word.length > len 
+                len = word.length
+            end
+        end
+        # step 2: create the strings
+        newarr = []
+        newarr.push(char * (len + 2 + 2))
+    
+        text.each do |word|
+            newarr.push(char + " " + word + (" " * (len + 1 - word.length)) + char)
+        end
+    
+        newarr.push(char * (len + 2 + 2))
+        
+        newarr.join("\n")
+    end
+end
+
+test = Codewars.new 
+puts test.frame(["create","a","frame"],"+")
