@@ -17,7 +17,7 @@ class Monster
     def scream(&block)
         actions[:screams] += 1
         print "#{name} screams! "
-        yield 
+        yield self if block_given?
     end
 
     def scare(&block)
@@ -36,8 +36,16 @@ class Monster
 end
 
 monster = Monster.new("Bob")
-monster.say { puts "Hello! Glad to meet you!" }
-monster.scream {puts "Don't track dirt on my floor!" }
-monster.scare {puts "Apologize :c" }
+# monster.say { puts "Hello! Glad to meet you!" }
+
+
+monster.scream do |m| 
+    puts "Don't track dirt on my floor!" 
+    puts m.actions
+end
+
+
+
+# monster.scare {puts "Apologize :c" }
 
 monster.print_scoreboard
