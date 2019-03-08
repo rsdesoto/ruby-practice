@@ -25,6 +25,14 @@ class Monster
         print "#{name} scared you! "
         yield
     end
+
+    def print_scoreboard
+        puts "--------------------"
+        puts "#{name} scoreboard"
+        puts "--------------------"
+        puts "- Screams: #{actions[:screams]}"
+        puts "- Scares: #{actions[:scares]}"
+    end
 end
 
 monster = Monster.new("Bob")
@@ -32,4 +40,4 @@ monster.say { puts "Hello! Glad to meet you!" }
 monster.scream {puts "Don't track dirt on my floor!" }
 monster.scare {puts "Apologize :c" }
 
-puts monster.actions
+monster.print_scoreboard
