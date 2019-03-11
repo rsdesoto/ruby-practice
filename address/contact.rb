@@ -45,6 +45,11 @@ class Contact
         last_first = last_name + ", "
         last_first += first_name
     end
+
+    def print_phone_numbers 
+        puts "phone numbers: "
+        phone_numbers.each { |num| puts num }
+    end
 end
 
 ry = Contact.new
@@ -55,4 +60,5 @@ ry.last_name = "desoto"
 puts ry.full_name
 ry.add_phone_number("home","123-456-7890")
 ry.add_phone_number("cell","555-555-5555")
-puts ry.phone_numbers
+# puts ry.phone_numbers
+ry.print_phone_numbers
