@@ -1,7 +1,19 @@
+require "./phone_number"
+
 class Contact
-    
     attr_writer :first_name, :middle_name, :last_name
-    
+    attr_reader :phone_numbers 
+
+    def initialize
+        @phone_numbers = []
+    end
+
+    def add_phone_number(kind, number)
+        phone_number = PhoneNumber.new 
+        phone_number.kind = kind 
+        phone_number.number = number
+        phone_numbers.push(phone_number)
+    end
 
     def first_name
         @first_name
@@ -27,7 +39,11 @@ class Contact
         end
         full_name += " "
         full_name += last_name
+    end
 
+    def last_first
+        last_first = last_name + ", "
+        last_first += first_name
     end
 end
 
@@ -36,12 +52,7 @@ ry.first_name = "ry"
 ry.middle_name = "elizabeth"
 ry.last_name = "desoto"
 
-puts ry
-
 puts ry.full_name
-
-nubs = Contact.new
-nubs.first_name = "nubs"
-nubs.last_name = "potate"
-
-puts nubs.full_name
+ry.add_phone_number("home","123-456-7890")
+ry.add_phone_number("cell","555-555-5555")
+puts ry.phone_numbers
