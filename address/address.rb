@@ -14,7 +14,7 @@ class Address
       if street_2
         address += " " + street_2
       end
-      address += ", #{city}, #{state}, #{postal_code}"
+      address += ", #{city}, #{state}, #{postal_code}\n"
     end
     address
   end
